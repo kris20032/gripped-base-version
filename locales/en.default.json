@@ -1,0 +1,21 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your cart",
+      "checkout": "Checkout",
+      "continue_shopping": "Continue shopping",
+      "subtotal": "Subtotal"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "price": "Price"
+    }
+  }
+}

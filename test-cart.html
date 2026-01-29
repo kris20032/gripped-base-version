@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Debug Test</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div style="padding: 40px;">
+    <h1>Cart Debug Test</h1>
+    <button id="testBtn" style="padding: 10px 20px; margin: 10px;">Add Test Product</button>
+    <button id="openBtn" style="padding: 10px 20px; margin: 10px;">Open Cart</button>
+    <button id="checkStorage" style="padding: 10px 20px; margin: 10px;">Check localStorage</button>
+    <button id="clearStorage" style="padding: 10px 20px; margin: 10px;">Clear localStorage</button>
+    <div id="output" style="margin-top: 20px; padding: 20px; background: #f0f0f0; font-family: monospace; white-space: pre-wrap;"></div>
+  </div>
+
+  <script src="assets/cart.js"></script>
+  <script>
+    const output = document.getElementById('output');
+
+    document.getElementById('testBtn').addEventListener('click', function() {
+      console.log('=== TEST BUTTON CLICKED ===');
+      const product = {
+        id: 'test-product',
+        name: 'Test Product',
+        price: 29.99,
+        quantity: 1,
+        size: 'One Size',
+        color: 'Red',
+        image: 'assets/brown-socks.png'
+      };
+
+      console.log('Calling addToCart with:', product);
+      const result = addToCart(product);
+      console.log('addToCart returned:', result);
+
+      output.textContent = 'Product added! Check console for details.\n\n';
+      output.textContent += 'Cart after adding:\n' + JSON.stringify(getCart(), null, 2);
+    });
+
+    document.getElementById('openBtn').addEventListener('click', function() {
+      console.log('=== OPEN CART CLICKED ===');
+      openCartDrawer();
+    });
+
+    document.getElementById('checkStorage').addEventListener('click', function() {
+      const cart = getCart();
+      console.log('Current cart from localStorage:', cart);
+      output.textContent = 'localStorage cart:\n' + JSON.stringify(cart, null, 2);
+    });
+
+    document.getElementById('clearStorage').addEventListener('click', function() {
+      localStorage.clear();
+      output.textContent = 'localStorage cleared!';
+      console.log('localStorage cleared');
+    });
+  </script>
+</body>
+</html>

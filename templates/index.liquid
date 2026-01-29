@@ -1,0 +1,419 @@
+<!-- Hero Section -->
+<section class="hero">
+  <img src="{{ 'hero-image.png' | asset_url }}" alt="Stay grounded" class="hero-image">
+</section>
+
+<!-- Product Grid Section -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <h2 style="font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif; font-size: 56px; font-weight: 300; font-style: italic;">You're gripped. You slay.</h2>
+    </div>
+
+    <div class="text-center" style="margin-bottom: 48px; margin-top: 24px;">
+      <p style="font-family: var(--font-secondary); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--color-gray-dark); margin: 0; text-transform: uppercase;" data-i18n="collection_subtitle">Our Collection</p>
+    </div>
+
+    <div class="product-grid">
+      {% for product in collections.all.products limit: 4 %}
+      <a href="{{ product.url }}" class="product-card" style="text-decoration: none; color: inherit;">
+        <div class="product-image">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}" style="filter: grayscale(0%) contrast(1.1) brightness(0.98);">
+          {% endif %}
+          <button class="quick-add" data-i18n="quick_add" data-product-id="{{ product.variants.first.id }}">quick add</button>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name" data-i18n="product_{{ product.handle | replace: '-grip-socks', '' | replace: '-', '_' }}">{{ product.title }}</h3>
+          <p class="product-price" data-price="{{ product.price | money_without_currency }}">{{ product.price | money }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M24 4L6 14V22C6 33 13 42.5 24 44C35 42.5 42 33 42 22V14L24 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-title" data-i18n="features_antislip_title">anti-slip</h3>
+        <p class="feature-description" data-i18n="features_antislip_desc">Maximum grip technology keeps you stable in every movement</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 12V24L32 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-title" data-i18n="features_comfort_title">premium comfort</h3>
+        <p class="feature-description" data-i18n="features_comfort_desc">Soft, breathable fabric engineered for all-day wear</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M8 24L18 34L40 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-title" data-i18n="features_quality_title">lasting quality</h3>
+        <p class="feature-description" data-i18n="features_quality_desc">Durable construction built to withstand intense use</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collection Showcase -->
+<section class="section" id="men">
+  <div class="container">
+    <div class="collection-showcase">
+      <div class="collection-image">
+        <img src="{{ 'showcase-white.jpg' | asset_url }}" alt="Men's Collection">
+      </div>
+      <div class="collection-content">
+        <h2 data-i18n="collection_men_title">Men's Collection</h2>
+        <p data-i18n="collection_men_desc">Built for athletes and everyday warriors. Classic designs with professional-grade grip technology for maximum performance in any activity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lavender" style="background-color: var(--color-gray-bg);">
+  <div class="container">
+    <div class="collection-showcase">
+      <div class="collection-content">
+        <h2 data-i18n="collection_lavender_title">Lavender Dreams</h2>
+        <p data-i18n="collection_lavender_desc">Soft, elegant, and sophisticated. Our lavender collection brings a touch of calm luxury to your athletic wear with premium comfort and grip.</p>
+      </div>
+      <div class="collection-image">
+        <img src="{{ 'showcase-lavender.png' | asset_url }}" alt="Lavender Collection">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="women">
+  <div class="container">
+    <div class="collection-showcase">
+      <div class="collection-image">
+        <img src="{{ 'showcase-pink.jpg' | asset_url }}" alt="Women's Collection">
+      </div>
+      <div class="collection-content">
+        <h2 data-i18n="collection_women_title">Women's Collection</h2>
+        <p data-i18n="collection_women_desc">Designed specifically for women who demand both style and performance. Our women's collection features vibrant colors and patterns while maintaining superior grip technology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brown" style="background-color: var(--color-gray-bg);">
+  <div class="container">
+    <div class="collection-showcase">
+      <div class="collection-content">
+        <h2 data-i18n="collection_brown_title">Earthy Elegance</h2>
+        <p data-i18n="collection_brown_desc">Warm tones meet premium performance. Our brown collection combines natural aesthetics with cutting-edge grip technology.</p>
+      </div>
+      <div class="collection-image">
+        <img src="{{ 'showcase-brown.png' | asset_url }}" alt="Brown Collection">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section class="section reviews-section">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <h2 data-i18n="reviews_title">What Our Customers Say</h2>
+      <p style="color: var(--color-gray-dark); max-width: 600px; margin: 0 auto;" data-i18n="reviews_subtitle">Real feedback from our gripped community</p>
+    </div>
+
+    <div class="reviews-container">
+      <div class="reviews-track">
+        <!-- Review Card 1 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_1_text">Świetne skarpety! Wreszcie nie ślizgam się podczas treningu. Idealnie trzymają się stopy.</p>
+          <div class="review-author">
+            <div class="author-avatar">KN</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_1_name">Kasia N.</p>
+              <p class="author-title" data-i18n="review_1_title">Instruktorka Pilates</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_2_text">Cudowne! Noszę je codziennie, są wygodne i materiał jest naprawdę wysokiej jakości. Polecam każdemu!</p>
+          <div class="review-author">
+            <div class="author-avatar">MG</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_2_name">Marta G.</p>
+              <p class="author-title" data-i18n="review_2_title">Miłośniczka jogi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_3_text">Najlepsze skarpety antypoślizgowe jakie miałam. Stosunek jakości do ceny jest rewelacyjny. Nie mogę się doczekać, żeby kupić więcej kolorów!</p>
+          <div class="review-author">
+            <div class="author-avatar">JN</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_3_name">Julia Nowak</p>
+              <p class="author-title" data-i18n="review_3_title">Trenerka personalna</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 4 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_4_text">Rewelacja! Moje stopy wreszcie nie się nie pocą, a przyczepność jest niesamowita.</p>
+          <div class="review-author">
+            <div class="author-avatar">OW</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_4_name">Ola W.</p>
+              <p class="author-title" data-i18n="review_4_title">Tancerka</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 5 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_5_text">Zakochałam się! Materiał jest miękki, a dodatkowo wyglądają bardzo stylowo. Każda z moich koleżanek chce takie same!</p>
+          <div class="review-author">
+            <div class="author-avatar">DK</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_5_name">Daria K.</p>
+              <p class="author-title" data-i18n="review_5_title">Studentka</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 6 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_6_text">Super jakość, wygodne i dobrze się trzymają na nodze. Polecam!</p>
+          <div class="review-author">
+            <div class="author-avatar">MW</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_6_name">Magda Wójcik</p>
+              <p class="author-title" data-i18n="review_6_title">Biegaczka</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 7 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_7_text">Te skarpety to game changer! Po miesiącu codziennego użytkowania wyglądają jak nowe. Jestem zachwycona trwałością i komfortem.</p>
+          <div class="review-author">
+            <div class="author-avatar">AK</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_7_name">Ania Kowalska</p>
+              <p class="author-title" data-i18n="review_7_title">Instruktorka fitness</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 8 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_8_text">Fantastyczne! Mam wrażliwe stopy i te skarpetki są dla mnie idealne.</p>
+          <div class="review-author">
+            <div class="author-avatar">ZB</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_8_name">Zuzanna B.</p>
+              <p class="author-title" data-i18n="review_8_title">Miłośniczka sportu</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 9 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_9_text">Odkryłam je przypadkiem i teraz są moim must-have. Nie wyobrażam sobie treningu bez nich. Przyczepność jest fenomenalna, a design minimalistyczny i elegancki.</p>
+          <div class="review-author">
+            <div class="author-avatar">PZ</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_9_name">Paulina Zielińska</p>
+              <p class="author-title" data-i18n="review_9_title">Architektka</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 10 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_10_text">Piękne kolory, super jakość. Jestem bardzo zadowolona.</p>
+          <div class="review-author">
+            <div class="author-avatar">KR</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_10_name">Klaudia R.</p>
+              <p class="author-title" data-i18n="review_10_title">Graficzka</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 11 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_11_text">Miałam okazję przetestować wiele skarpetek antypoślizgowych, ale te są absolutnie najlepsze. Jakość wykonania na najwyższym poziomie, a przyczepność działa naprawdę świetnie. Polecam gorąco!</p>
+          <div class="review-author">
+            <div class="author-avatar">AM</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_11_name">Agata Mazur</p>
+              <p class="author-title" data-i18n="review_11_title">Fizjoterapeutka</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 12 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+          </div>
+          <p class="review-text" data-i18n="review_12_text">Śliczne! Kupiłam je na prezent dla przyjaciółki i ona też jest zachwycona.</p>
+          <div class="review-author">
+            <div class="author-avatar">NK</div>
+            <div class="author-info">
+              <p class="author-name" data-i18n="review_12_name">Natalia K.</p>
+              <p class="author-title" data-i18n="review_12_title">Blogerka lifestyle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Quick add functionality for homepage products
+  document.addEventListener('DOMContentLoaded', function() {
+    const quickAddButtons = document.querySelectorAll('.quick-add');
+
+    quickAddButtons.forEach((button) => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const variantId = this.getAttribute('data-product-id');
+
+        // Use Shopify's Ajax API to add to cart
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Update cart count
+          fetch('/cart.js')
+            .then(response => response.json())
+            .then(cart => {
+              const cartCount = document.querySelector('.cart-count');
+              if (cartCount) {
+                cartCount.textContent = cart.item_count;
+              }
+              // Open cart drawer
+              if (typeof openCartDrawer === 'function') {
+                openCartDrawer();
+              }
+            });
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+        });
+      });
+    });
+  });
+</script>

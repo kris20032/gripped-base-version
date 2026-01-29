@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - gripped.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css?v=thin100">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html" class="logo">gripped.</a>
+
+        <div class="header-icons">
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button class="lang-toggle" id="langToggle">
+              <span class="flag-icon" data-flag="us"></span>
+              <span class="arrow-icon">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option" data-lang="en" data-currency="USD" data-symbol="$" data-flag="us">
+                <span class="flag-icon" data-flag="us"></span>
+                <span class="country-name">United States</span>
+                <span class="currency-code">(USD $)</span>
+              </div>
+              <div class="lang-option" data-lang="pl" data-currency="PLN" data-symbol="PLN" data-flag="pl">
+                <span class="flag-icon" data-flag="pl"></span>
+                <span class="country-name">Poland</span>
+                <span class="currency-code">(PLN)</span>
+              </div>
+              <div class="lang-option" data-lang="de" data-currency="EUR" data-symbol="€" data-flag="de">
+                <span class="flag-icon" data-flag="de"></span>
+                <span class="country-name">Germany</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="fr" data-currency="EUR" data-symbol="€" data-flag="fr">
+                <span class="flag-icon" data-flag="fr"></span>
+                <span class="country-name">France</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="es" data-currency="EUR" data-symbol="€" data-flag="es">
+                <span class="flag-icon" data-flag="es"></span>
+                <span class="country-name">Spain</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="it" data-currency="EUR" data-symbol="€" data-flag="it">
+                <span class="flag-icon" data-flag="it"></span>
+                <span class="country-name">Italy</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="gb" data-currency="GBP" data-symbol="£" data-flag="gb">
+                <span class="flag-icon" data-flag="gb"></span>
+                <span class="country-name">United Kingdom</span>
+                <span class="currency-code">(GBP £)</span>
+              </div>
+              <div class="lang-option" data-lang="au" data-currency="AUD" data-symbol="$" data-flag="au">
+                <span class="flag-icon" data-flag="au"></span>
+                <span class="country-name">Australia</span>
+                <span class="currency-code">(AUD $)</span>
+              </div>
+            </div>
+          </div>
+          <button class="icon-btn search-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="#account" class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 18C3 14.134 6.134 11 10 11C13.866 11 17 14.134 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#cart" class="icon-btn cart-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 3H4.5L6.5 13H16.5L18.5 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="17" r="1" fill="currentColor"/>
+              <circle cx="15" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 120px;">
+      <div class="container">
+        <div class="text-center mb-lg">
+          <h1 style="font-family: var(--font-secondary); font-size: 48px; margin-bottom: 16px;">Frequently Asked Questions</h1>
+          <p style="color: var(--color-gray-dark); max-width: 700px; margin: 0 auto; font-size: var(--text-lg);">
+            Find answers to common questions about our products, orders, and policies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+
+          <!-- Orders & Shipping -->
+          <h2 style="margin-bottom: 32px;">Orders & Shipping</h2>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>How long does shipping take?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Standard shipping typically takes 3-5 business days within the continental US. International shipping times vary by location but generally range from 7-14 business days. Express shipping options are available at checkout for faster delivery.</p>
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>Do you offer free shipping?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Yes! We offer free standard shipping on all orders over $50. Orders under $50 have a flat shipping rate of $5.99.</p>
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>Can I track my order?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Absolutely! Once your order ships, you'll receive a tracking number via email. You can use this number to track your package's progress on our carrier's website.</p>
+            </div>
+          </details>
+
+          <!-- Returns & Exchanges -->
+          <h2 style="margin-top: 64px; margin-bottom: 32px;">Returns & Exchanges</h2>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>What is your return policy?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>We offer a 30-day return window from the date of delivery. Items must be unworn, unwashed, and in their original packaging with tags attached. To initiate a return, please contact our customer service team.</p>
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>How do I exchange for a different size?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>We're happy to help you find the perfect fit! Contact us within 30 days of receiving your order, and we'll arrange an exchange. You'll receive a prepaid return label and we'll ship your new size as soon as we receive your return.</p>
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>Who pays for return shipping?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>For exchanges and defective items, we provide a prepaid return label at no cost to you. For standard returns, return shipping is the customer's responsibility.</p>
+            </div>
+          </details>
+
+          <!-- Product Care -->
+          <h2 style="margin-top: 64px; margin-bottom: 32px;">Product Care</h2>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>How should I wash my grip socks?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Machine wash cold with like colors. We recommend using a gentle cycle and avoiding bleach. Tumble dry on low heat or air dry to extend the life of your socks. The grip technology will maintain its effectiveness through many washes when cared for properly.</p>
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>How long do the grips last?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Our grip technology is designed for durability. With proper care, your gripped. socks should maintain their grip effectiveness for many months of regular use. The exact lifespan depends on frequency of use and care practices.</p>
+            </div>
+          </details>
+
+          <!-- Sizing -->
+          <h2 style="margin-top: 64px; margin-bottom: 32px;">Sizing</h2>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>How do I know which size to order?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Our socks come in four sizes: XS (US 4-6), S (US 6-8), M (US 8-10), and L (US 10-12). We recommend choosing based on your regular shoe size. If you're between sizes, we suggest sizing up for a more comfortable fit.</p>
+            </div>
+          </details>
+
+          <details style="border-bottom: 1px solid var(--color-gray-light); padding: 20px 0;">
+            <summary style="font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+              <span>Do grip socks run small or large?</span>
+              <span style="transition: transform 0.2s;">▼</span>
+            </summary>
+            <div style="margin-top: 16px; color: var(--color-gray-dark); font-size: 14px; line-height: 1.6;">
+              <p>Our socks are designed to fit true to size with a snug, supportive fit. The elastic blend material provides some stretch for comfort while maintaining grip effectiveness.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section" style="background-color: var(--color-gray-bg);">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+          <h2 style="margin-bottom: 16px;">Still Have Questions?</h2>
+          <p style="color: var(--color-gray-dark); margin-bottom: 32px; font-size: var(--text-md);">
+            Our customer service team is here to help. Reach out and we'll get back to you as soon as possible.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4 data-i18n="footer_about_title">About</h4>
+          <p data-i18n="footer_about_text">gripped. delivers premium grip socks designed for comfort, performance, and lasting quality. Stay grounded in every step.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_shop_title">Shop</h4>
+          <ul>
+            <li><a href="index.html#women" data-i18n="footer_shop_women">Women's Collection</a></li>
+            <li><a href="index.html#men" data-i18n="footer_shop_men">Men's Collection</a></li>
+            <li><a href="index.html" data-i18n="footer_shop_all">All Products</a></li>
+            <li><a href="#gift" data-i18n="footer_shop_gift">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_support_title">Support</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="footer_support_contact">Contact Us</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_shipping">Shipping Info</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_returns">Returns</a></li>
+            <li><a href="faq.html" data-i18n="footer_support_faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_newsletter_title">Newsletter</h4>
+          <p data-i18n="footer_newsletter_text">Stay updated with new releases and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" data-i18n-placeholder="footer_newsletter_placeholder" placeholder="enter your email" required>
+            <button type="submit" data-i18n="footer_newsletter_button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p data-i18n="footer_copyright">&copy; 2026 gripped.</p>
+          <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+            <a href="#terms" style="color: var(--color-gray-dark); text-decoration: none;">Terms of Service</a>
+            <a href="#privacy" style="color: var(--color-gray-dark); text-decoration: none;">Privacy Policy</a>
+            <a href="#cookies" style="color: var(--color-gray-dark); text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/translations.js"></script>
+  <script src="assets/theme.js"></script>
+  <script src="assets/cart.js"></script>
+</body>
+</html>

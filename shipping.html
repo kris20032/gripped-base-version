@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping & Returns - gripped.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css?v=thin100">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html" class="logo">gripped.</a>
+
+        <div class="header-icons">
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button class="lang-toggle" id="langToggle">
+              <span class="flag-icon" data-flag="pl"></span>
+              <span class="arrow-icon">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option" data-lang="en" data-currency="USD" data-symbol="$" data-flag="us">
+                <span class="flag-icon" data-flag="us"></span>
+                <span class="country-name">United States</span>
+                <span class="currency-code">(USD $)</span>
+              </div>
+              <div class="lang-option" data-lang="pl" data-currency="PLN" data-symbol="PLN" data-flag="pl">
+                <span class="flag-icon" data-flag="pl"></span>
+                <span class="country-name">Poland</span>
+                <span class="currency-code">(PLN)</span>
+              </div>
+              <div class="lang-option" data-lang="de" data-currency="EUR" data-symbol="€" data-flag="de">
+                <span class="flag-icon" data-flag="de"></span>
+                <span class="country-name">Germany</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="fr" data-currency="EUR" data-symbol="€" data-flag="fr">
+                <span class="flag-icon" data-flag="fr"></span>
+                <span class="country-name">France</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="es" data-currency="EUR" data-symbol="€" data-flag="es">
+                <span class="flag-icon" data-flag="es"></span>
+                <span class="country-name">Spain</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="it" data-currency="EUR" data-symbol="€" data-flag="it">
+                <span class="flag-icon" data-flag="it"></span>
+                <span class="country-name">Italy</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="gb" data-currency="GBP" data-symbol="£" data-flag="gb">
+                <span class="flag-icon" data-flag="gb"></span>
+                <span class="country-name">United Kingdom</span>
+                <span class="currency-code">(GBP £)</span>
+              </div>
+              <div class="lang-option" data-lang="au" data-currency="AUD" data-symbol="$" data-flag="au">
+                <span class="flag-icon" data-flag="au"></span>
+                <span class="country-name">Australia</span>
+                <span class="currency-code">(AUD $)</span>
+              </div>
+            </div>
+          </div>
+          <button class="icon-btn search-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="#account" class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 18C3 14.134 6.134 11 10 11C13.866 11 17 14.134 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#cart" class="icon-btn cart-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 3H4.5L6.5 13H16.5L18.5 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="17" r="1" fill="currentColor"/>
+              <circle cx="15" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 120px;">
+      <div class="container">
+        <div class="text-center mb-lg">
+          <h1 style="font-family: var(--font-secondary); font-size: 48px; margin-bottom: 16px;">Shipping & Returns</h1>
+          <p style="color: var(--color-gray-dark); max-width: 700px; margin: 0 auto; font-size: var(--text-lg);">
+            Fast, reliable shipping with hassle-free returns. Your satisfaction is our priority.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shipping Information -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <h2 style="margin-bottom: 32px;">Shipping Information</h2>
+
+          <!-- Shipping Methods -->
+          <div style="margin-bottom: 48px;">
+            <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--color-black);">Shipping Methods</h3>
+            <div style="display: grid; gap: 16px;">
+              <div style="padding: 20px; border: 1px solid var(--color-gray-light); border-radius: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <strong style="font-size: 16px;">Standard Shipping</strong>
+                  <span class="shipping-price" style="color: var(--color-gray-dark);" data-price="2.59">9 PLN</span>
+                </div>
+                <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px;">3-7 business days</p>
+              </div>
+
+              <div style="padding: 20px; border: 1px solid var(--color-gray-light); border-radius: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <strong style="font-size: 16px;">Express Shipping</strong>
+                  <span class="shipping-price" style="color: var(--color-gray-dark);" data-price="5.76">20 PLN</span>
+                </div>
+                <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px;">1-2 business days</p>
+              </div>
+
+              <div style="padding: 20px; border: 1px solid var(--color-black); border-radius: 8px; background-color: var(--color-gray-bg);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <strong style="font-size: 16px;">Free Shipping</strong>
+                  <span style="color: var(--color-primary); font-weight: 600;">FREE</span>
+                </div>
+                <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px;">On orders over <span class="free-shipping-threshold" data-price="34.56">120 PLN</span> (3-7 business days)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Times -->
+          <div style="margin-bottom: 48px;">
+            <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--color-black);">Estimated Delivery Times</h3>
+            <div style="border: 1px solid var(--color-gray-light); border-radius: 8px; overflow: hidden;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--color-gray-light);">
+                <div style="padding: 16px; font-weight: 600; background-color: var(--color-gray-bg);">Region</div>
+                <div style="padding: 16px; font-weight: 600; background-color: var(--color-gray-bg);">Delivery Time</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--color-gray-light);">
+                <div style="padding: 16px;">Poland</div>
+                <div style="padding: 16px; color: var(--color-gray-dark);">3-7 business days</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--color-gray-light);">
+                <div style="padding: 16px;">United States</div>
+                <div style="padding: 16px; color: var(--color-gray-dark);">3-5 business days</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--color-gray-light);">
+                <div style="padding: 16px;">Canada</div>
+                <div style="padding: 16px; color: var(--color-gray-dark);">5-7 business days</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--color-gray-light);">
+                <div style="padding: 16px;">Europe</div>
+                <div style="padding: 16px; color: var(--color-gray-dark);">7-10 business days</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--color-gray-light);">
+                <div style="padding: 16px;">United Kingdom</div>
+                <div style="padding: 16px; color: var(--color-gray-dark);">5-8 business days</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div style="padding: 16px;">Australia</div>
+                <div style="padding: 16px; color: var(--color-gray-dark);">8-12 business days</div>
+              </div>
+            </div>
+            <p style="margin-top: 12px; font-size: 14px; color: var(--color-gray-dark);">
+              * Delivery times are estimates and may vary during peak seasons or due to customs processing.
+            </p>
+          </div>
+
+          <!-- Order Tracking -->
+          <div style="margin-bottom: 48px;">
+            <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--color-black);">Order Tracking</h3>
+            <p style="color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 16px;">
+              Once your order ships, you'll receive a tracking number via email. You can use this number to track your package's journey to your doorstep. If you don't receive tracking information within 2 business days of placing your order, please contact our support team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Returns Section -->
+    <section class="section" style="background-color: var(--color-gray-bg);">
+      <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <h2 style="margin-bottom: 32px;">Returns & Exchanges</h2>
+
+          <!-- Returns Policy -->
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--color-black);">Our Returns Policy</h3>
+            <p style="color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 16px;">
+              We want you to love your gripped. socks. If for any reason you're not completely satisfied, you can return unworn, unwashed items within 30 days of delivery for a full refund or exchange.
+            </p>
+            <div style="display: grid; gap: 12px;">
+              <div style="display: flex; align-items: start; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="color: var(--color-gray-dark);">30-day return window from delivery date</span>
+              </div>
+              <div style="display: flex; align-items: start; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="color: var(--color-gray-dark);">Items must be unworn, unwashed, and in original packaging</span>
+              </div>
+              <div style="display: flex; align-items: start; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="color: var(--color-gray-dark);">Original tags must be attached</span>
+              </div>
+              <div style="display: flex; align-items: start; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="color: var(--color-gray-dark);">Refunds processed within 5-7 business days of receiving return</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- How to Return -->
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--color-black);">How to Return</h3>
+            <div style="display: grid; gap: 20px;">
+              <div style="display: flex; gap: 16px;">
+                <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-black); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
+                <div>
+                  <strong style="display: block; margin-bottom: 4px;">Contact Us</strong>
+                  <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px; line-height: 1.6;">
+                    Email us at returns@gripped.com with your order number and reason for return. We'll send you a prepaid return label within 24 hours.
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px;">
+                <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-black); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
+                <div>
+                  <strong style="display: block; margin-bottom: 4px;">Pack Your Items</strong>
+                  <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px; line-height: 1.6;">
+                    Place items in their original packaging (if available) with tags attached. Include your packing slip or order confirmation.
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px;">
+                <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-black); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
+                <div>
+                  <strong style="display: block; margin-bottom: 4px;">Ship It Back</strong>
+                  <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px; line-height: 1.6;">
+                    Attach the prepaid label to your package and drop it off at any authorized carrier location. Save your tracking number for your records.
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px;">
+                <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-black); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">4</div>
+                <div>
+                  <strong style="display: block; margin-bottom: 4px;">Get Your Refund</strong>
+                  <p style="color: var(--color-gray-dark); margin: 0; font-size: 14px; line-height: 1.6;">
+                    Once we receive and inspect your return, we'll process your refund to the original payment method within 5-7 business days.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exchanges -->
+          <div>
+            <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--color-black);">Exchanges</h3>
+            <p style="color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 16px;">
+              Need a different size or color? We're happy to help! Contact us at exchanges@gripped.com with your order number and what you'd like to exchange for. We'll send you the new item right away and include a prepaid return label for the original item.
+            </p>
+            <p style="color: var(--color-gray-dark); line-height: 1.8;">
+              <strong>Note:</strong> Exchanges are subject to availability. If your preferred item is out of stock, we'll process a full refund instead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+          <h2 style="margin-bottom: 24px;">Questions About Your Order?</h2>
+          <p style="color: var(--color-gray-dark); margin-bottom: 32px; font-size: var(--text-md); line-height: 1.6;">
+            Our customer service team is here to help. Reach out with any questions about shipping, returns, or your order status.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Contact Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4 data-i18n="footer_about_title">About</h4>
+          <p data-i18n="footer_about_text">gripped. delivers premium grip socks designed for comfort, performance, and lasting quality. Stay grounded in every step.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_shop_title">Shop</h4>
+          <ul>
+            <li><a href="index.html#women" data-i18n="footer_shop_women">Women's Collection</a></li>
+            <li><a href="index.html#men" data-i18n="footer_shop_men">Men's Collection</a></li>
+            <li><a href="index.html" data-i18n="footer_shop_all">All Products</a></li>
+            <li><a href="#gift" data-i18n="footer_shop_gift">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_support_title">Support</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="footer_support_contact">Contact Us</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_shipping">Shipping Info</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_returns">Returns</a></li>
+            <li><a href="faq.html" data-i18n="footer_support_faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_newsletter_title">Newsletter</h4>
+          <p data-i18n="footer_newsletter_text">Stay updated with new releases and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" data-i18n-placeholder="footer_newsletter_placeholder" placeholder="enter your email" required>
+            <button type="submit" data-i18n="footer_newsletter_button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p data-i18n="footer_copyright">&copy; 2026 gripped.</p>
+          <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+            <a href="#terms" style="color: var(--color-gray-dark); text-decoration: none;">Terms of Service</a>
+            <a href="#privacy" style="color: var(--color-gray-dark); text-decoration: none;">Privacy Policy</a>
+            <a href="#cookies" style="color: var(--color-gray-dark); text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/translations.js"></script>
+  <script src="assets/theme.js"></script>
+  <script src="assets/cart.js"></script>
+  <script>
+    // Update shipping prices when currency changes
+    function updateShippingPrices() {
+      const currency = localStorage.getItem('gripped_currency') || 'PLN';
+      const symbol = localStorage.getItem('gripped_currency_symbol') || 'PLN';
+
+      // Update shipping prices
+      document.querySelectorAll('.shipping-price').forEach(el => {
+        const basePrice = parseFloat(el.getAttribute('data-price'));
+        let convertedPrice = basePrice;
+
+        if (typeof convertPrice === 'function') {
+          convertedPrice = convertPrice(basePrice, currency);
+        }
+
+        // Format based on currency
+        if (currency === 'PLN') {
+          el.textContent = `${Math.round(convertedPrice)} ${symbol}`;
+        } else {
+          el.textContent = `${symbol}${convertedPrice.toFixed(2)}`;
+        }
+      });
+
+      // Update free shipping threshold
+      const thresholdEl = document.querySelector('.free-shipping-threshold');
+      if (thresholdEl) {
+        const basePrice = parseFloat(thresholdEl.getAttribute('data-price'));
+        let convertedPrice = basePrice;
+
+        if (typeof convertPrice === 'function') {
+          convertedPrice = convertPrice(basePrice, currency);
+        }
+
+        if (currency === 'PLN') {
+          thresholdEl.textContent = `${Math.round(convertedPrice)} ${symbol}`;
+        } else {
+          thresholdEl.textContent = `${symbol}${convertedPrice.toFixed(2)}`;
+        }
+      }
+    }
+
+    // Update on page load
+    document.addEventListener('DOMContentLoaded', updateShippingPrices);
+
+    // Listen for currency changes
+    document.addEventListener('currencyChanged', updateShippingPrices);
+  </script>
+</body>
+</html>

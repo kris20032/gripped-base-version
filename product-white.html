@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic White Grip Socks - gripped.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css?v=thin100">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html" class="logo">gripped.</a>
+
+        <div class="header-icons">
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button class="lang-toggle" id="langToggle">
+              <span class="flag-icon" data-flag="us"></span>
+              <span class="arrow-icon">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option" data-lang="en" data-currency="USD" data-symbol="$" data-flag="us">
+                <span class="flag-icon" data-flag="us"></span>
+                <span class="country-name">United States</span>
+                <span class="currency-code">(USD $)</span>
+              </div>
+              <div class="lang-option" data-lang="pl" data-currency="PLN" data-symbol="PLN" data-flag="pl">
+                <span class="flag-icon" data-flag="pl"></span>
+                <span class="country-name">Poland</span>
+                <span class="currency-code">(PLN)</span>
+              </div>
+              <div class="lang-option" data-lang="de" data-currency="EUR" data-symbol="€" data-flag="de">
+                <span class="flag-icon" data-flag="de"></span>
+                <span class="country-name">Germany</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="fr" data-currency="EUR" data-symbol="€" data-flag="fr">
+                <span class="flag-icon" data-flag="fr"></span>
+                <span class="country-name">France</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="es" data-currency="EUR" data-symbol="€" data-flag="es">
+                <span class="flag-icon" data-flag="es"></span>
+                <span class="country-name">Spain</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="it" data-currency="EUR" data-symbol="€" data-flag="it">
+                <span class="flag-icon" data-flag="it"></span>
+                <span class="country-name">Italy</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="gb" data-currency="GBP" data-symbol="£" data-flag="gb">
+                <span class="flag-icon" data-flag="gb"></span>
+                <span class="country-name">United Kingdom</span>
+                <span class="currency-code">(GBP £)</span>
+              </div>
+              <div class="lang-option" data-lang="au" data-currency="AUD" data-symbol="$" data-flag="au">
+                <span class="flag-icon" data-flag="au"></span>
+                <span class="country-name">Australia</span>
+                <span class="currency-code">(AUD $)</span>
+              </div>
+            </div>
+          </div>
+          <button class="icon-btn search-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="#account" class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 18C3 14.134 6.134 11 10 11C13.866 11 17 14.134 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#cart" class="icon-btn cart-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 3H4.5L6.5 13H16.5L18.5 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="17" r="1" fill="currentColor"/>
+              <circle cx="15" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="assets/hero-image.png" alt="Stay grounded" class="hero-image">
+    </section>
+
+    <!-- Product Section -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin-left: 15%;">
+
+          <!-- Product Image -->
+          <div class="product-image-zoom-container">
+            <div class="main-product-image-zoom">
+              <img src="assets/white-socks.png" alt="Classic White Grip Socks" id="mainImage" style="filter: grayscale(0%) contrast(0.90) brightness(1.20);">
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="product-details" style="max-width: 400px; padding-left: 48px;">
+            <h1 style="font-family: var(--font-secondary); font-size: 36px; margin-bottom: 16px;">Classic White</h1>
+
+            <p class="product-price" style="font-size: 20px; margin-bottom: 32px;" data-price="16.99">$16.99</p>
+
+            <!-- Add to Cart -->
+            <button class="btn glow-btn glow-btn-outline">Add to Cart</button>
+            <button class="btn glow-btn glow-btn-solid">Buy It Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>About</h4>
+          <p>gripped. delivers premium grip socks designed for comfort, performance, and lasting quality. Stay grounded in every step.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="index.html#women">Women's Collection</a></li>
+            <li><a href="index.html#men">Men's Collection</a></li>
+            <li><a href="index.html">All Products</a></li>
+            <li><a href="#gift">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="shipping.html">Shipping Info</a></li>
+            <li><a href="shipping.html">Returns</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Newsletter</h4>
+          <p>Stay updated with new releases and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p>&copy; 2026 gripped.</p>
+          <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+            <a href="#terms" style="color: var(--color-gray-dark); text-decoration: none;">Terms of Service</a>
+            <a href="#privacy" style="color: var(--color-gray-dark); text-decoration: none;">Privacy Policy</a>
+            <a href="#cookies" style="color: var(--color-gray-dark); text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/translations.js"></script>
+  <script src="assets/theme.js"></script>
+  <script src="assets/cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add to cart functionality
+      const addToCartBtn = document.querySelector('.glow-btn-outline');
+      if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          const product = {
+            id: 'classic-white-grip-socks',
+            name: 'Classic White',
+            price: 16.99,
+            quantity: 1,
+            size: 'One Size',
+            color: 'White',
+            image: 'assets/white-socks.png'
+          };
+
+          if (typeof addToCart === 'function') {
+            addToCart(product);
+            openCartDrawer();
+          }
+        });
+      }
+
+      // Zoom effect on hover
+      const zoomContainer = document.querySelector('.main-product-image-zoom');
+      const img = document.getElementById('mainImage');
+
+      zoomContainer.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        img.style.transformOrigin = `${x}% ${y}%`;
+        img.style.transform = 'scale(2)';
+      });
+
+      zoomContainer.addEventListener('mouseleave', function() {
+        img.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+
+  <style>
+    .product-image-zoom-container {
+      position: sticky;
+      top: 120px;
+    }
+
+    .main-product-image-zoom {
+      position: relative;
+      width: 100%;
+      max-width: 550px;
+      aspect-ratio: 3/5;
+      overflow: hidden;
+      border-radius: 0;
+      background-color: var(--color-gray-bg);
+      cursor: zoom-in;
+    }
+
+    .main-product-image-zoom::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/grain.png');
+      background-size: 300px 300px;
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: 2;
+      mix-blend-mode: overlay;
+      opacity: 0.05;
+    }
+
+    .main-product-image-zoom img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+
+      .product-image-zoom-container {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    /* Glow Button Styles */
+    .glow-btn {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      height: 56px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .glow-btn-outline {
+      background-color: white;
+      border: 1px solid #333;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .glow-btn-solid {
+      background-color: #333;
+      border: 1px solid #333;
+      color: white;
+    }
+
+    /* Glare effect overlay for solid button */
+    .glow-btn-solid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      transition: left 0.5s ease;
+    }
+
+    /* Glare effect overlay for outline button - darker glare */
+    .glow-btn-outline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.08),
+        transparent
+      );
+      transition: left 0.5s ease;
+    }
+
+    .glow-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Glow effect */
+    .glow-btn-outline:hover {
+      box-shadow: 0 0 20px rgba(51, 51, 51, 0.5),
+                  0 0 40px rgba(51, 51, 51, 0.3),
+                  0 0 60px rgba(51, 51, 51, 0.2);
+      border-color: #111;
+    }
+
+    .glow-btn-solid:hover {
+      box-shadow: 0 0 20px rgba(51, 51, 51, 0.5),
+                  0 0 40px rgba(51, 51, 51, 0.3),
+                  0 0 60px rgba(51, 51, 51, 0.2);
+      background-color: #222;
+    }
+
+    /* Press animation */
+    .glow-btn:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+
+    .glow-btn-outline:active {
+      box-shadow: 0 0 10px rgba(51, 51, 51, 0.6);
+    }
+
+    .glow-btn-solid:active {
+      box-shadow: 0 0 10px rgba(51, 51, 51, 0.6);
+    }
+  </style>
+</body>
+</html>

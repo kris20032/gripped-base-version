@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "title": "Classic White Grip Socks",
+      "body_html": "<p>Premium grip socks designed for maximum comfort and stability. Featuring our signature anti-slip technology and breathable fabric construction.</p>",
+      "vendor": "gripped",
+      "product_type": "Grip Socks",
+      "tags": ["socks", "grip socks", "white", "classic"],
+      "variants": [
+        {
+          "price": "16.99",
+          "sku": "GRIPPED-WHITE-001",
+          "inventory_quantity": 100,
+          "inventory_management": "shopify"
+        }
+      ],
+      "images": [
+        {
+          "src": "white-socks.png"
+        }
+      ]
+    },
+    {
+      "title": "Soft Lavender Grip Socks",
+      "body_html": "<p>Premium grip socks designed for maximum comfort and stability. Featuring our signature anti-slip technology and breathable fabric construction.</p>",
+      "vendor": "gripped",
+      "product_type": "Grip Socks",
+      "tags": ["socks", "grip socks", "lavender", "purple"],
+      "variants": [
+        {
+          "price": "16.99",
+          "sku": "GRIPPED-LAVENDER-001",
+          "inventory_quantity": 100,
+          "inventory_management": "shopify"
+        }
+      ],
+      "images": [
+        {
+          "src": "lavender-socks.png"
+        }
+      ]
+    },
+    {
+      "title": "Petal Pink Grip Socks",
+      "body_html": "<p>Premium grip socks designed for maximum comfort and stability. Featuring our signature anti-slip technology and breathable fabric construction.</p>",
+      "vendor": "gripped",
+      "product_type": "Grip Socks",
+      "tags": ["socks", "grip socks", "pink"],
+      "variants": [
+        {
+          "price": "16.99",
+          "sku": "GRIPPED-PINK-001",
+          "inventory_quantity": 100,
+          "inventory_management": "shopify"
+        }
+      ],
+      "images": [
+        {
+          "src": "pink-socks.png"
+        }
+      ]
+    },
+    {
+      "title": "Warm Brown Grip Socks",
+      "body_html": "<p>Premium grip socks designed for maximum comfort and stability. Featuring our signature anti-slip technology and breathable fabric construction.</p>",
+      "vendor": "gripped",
+      "product_type": "Grip Socks",
+      "tags": ["socks", "grip socks", "brown"],
+      "variants": [
+        {
+          "price": "16.99",
+          "sku": "GRIPPED-BROWN-001",
+          "inventory_quantity": 100,
+          "inventory_management": "shopify"
+        }
+      ],
+      "images": [
+        {
+          "src": "brown-socks.png"
+        }
+      ]
+    }
+  ]
+}

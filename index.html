@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gripped. - Premium Grip Socks</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css?v=500contain">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html" class="logo">gripped.</a>
+
+        <div class="header-icons">
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button class="lang-toggle" id="langToggle">
+              <span class="flag-icon" data-flag="us"></span>
+              <span class="arrow-icon">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option" data-lang="en" data-currency="USD" data-symbol="$" data-flag="us">
+                <span class="flag-icon" data-flag="us"></span>
+                <span class="country-name">United States</span>
+                <span class="currency-code">(USD $)</span>
+              </div>
+              <div class="lang-option" data-lang="pl" data-currency="PLN" data-symbol="PLN" data-flag="pl">
+                <span class="flag-icon" data-flag="pl"></span>
+                <span class="country-name">Poland</span>
+                <span class="currency-code">(PLN)</span>
+              </div>
+              <div class="lang-option" data-lang="de" data-currency="EUR" data-symbol="€" data-flag="de">
+                <span class="flag-icon" data-flag="de"></span>
+                <span class="country-name">Germany</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="fr" data-currency="EUR" data-symbol="€" data-flag="fr">
+                <span class="flag-icon" data-flag="fr"></span>
+                <span class="country-name">France</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="es" data-currency="EUR" data-symbol="€" data-flag="es">
+                <span class="flag-icon" data-flag="es"></span>
+                <span class="country-name">Spain</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="it" data-currency="EUR" data-symbol="€" data-flag="it">
+                <span class="flag-icon" data-flag="it"></span>
+                <span class="country-name">Italy</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="gb" data-currency="GBP" data-symbol="£" data-flag="gb">
+                <span class="flag-icon" data-flag="gb"></span>
+                <span class="country-name">United Kingdom</span>
+                <span class="currency-code">(GBP £)</span>
+              </div>
+              <div class="lang-option" data-lang="au" data-currency="AUD" data-symbol="$" data-flag="au">
+                <span class="flag-icon" data-flag="au"></span>
+                <span class="country-name">Australia</span>
+                <span class="currency-code">(AUD $)</span>
+              </div>
+            </div>
+          </div>
+          <button class="icon-btn search-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="#account" class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 18C3 14.134 6.134 11 10 11C13.866 11 17 14.134 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#cart" class="icon-btn cart-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 3H4.5L6.5 13H16.5L18.5 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="17" r="1" fill="currentColor"/>
+              <circle cx="15" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/hero-image-mobile.png">
+        <img src="assets/hero-image.png" alt="Stay grounded" class="hero-image">
+      </picture>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="text-center mb-lg">
+          <h2 style="font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif; font-size: 56px; font-weight: 300; font-style: italic;">You're gripped. You slay.</h2>
+        </div>
+
+        <div class="text-center" style="margin-bottom: 48px; margin-top: 24px;">
+          <p style="font-family: var(--font-secondary); font-size: 18px; font-weight: 400; letter-spacing: 2px; color: var(--color-gray-dark); margin: 0; text-transform: uppercase;" data-i18n="collection_subtitle">Our Collection</p>
+        </div>
+
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <a href="product-white.html" class="product-card" style="text-decoration: none; color: inherit;">
+            <div class="product-image">
+              <img src="assets/white-socks.png" alt="Classic White Grip Socks" style="filter: grayscale(0%) contrast(1.1) brightness(0.98);">
+              <button class="quick-add" data-i18n="quick_add">quick add</button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name" data-i18n="product_classic_white">Classic White</h3>
+              <p class="product-price" data-price="16.99">$16.99</p>
+            </div>
+          </a>
+
+          <!-- Product 2 -->
+          <a href="product-lavender.html" class="product-card" style="text-decoration: none; color: inherit;">
+            <div class="product-image">
+              <img src="assets/lavender-socks.png" alt="Soft Lavender Grip Socks" style="filter: grayscale(0%) contrast(1.1) brightness(0.98);">
+              <button class="quick-add" data-i18n="quick_add">quick add</button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name" data-i18n="product_soft_lavender">Soft Lavender</h3>
+              <p class="product-price" data-price="16.99">$16.99</p>
+            </div>
+          </a>
+
+          <!-- Product 3 -->
+          <a href="product-pink.html" class="product-card" style="text-decoration: none; color: inherit;">
+            <div class="product-image">
+              <img src="assets/pink-socks.png" alt="Petal Pink Grip Socks" style="filter: grayscale(0%) contrast(1.1) brightness(0.98);">
+              <button class="quick-add" data-i18n="quick_add">quick add</button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name" data-i18n="product_petal_pink">Petal Pink</h3>
+              <p class="product-price" data-price="16.99">$16.99</p>
+            </div>
+          </a>
+
+          <!-- Product 4 -->
+          <a href="product-brown.html" class="product-card" style="text-decoration: none; color: inherit;">
+            <div class="product-image">
+              <img src="assets/brown-socks.png" alt="Warm Brown Grip Socks" style="filter: grayscale(0%) contrast(1.1) brightness(0.98);">
+              <button class="quick-add" data-i18n="quick_add">quick add</button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name" data-i18n="product_warm_brown">Warm Brown</h3>
+              <p class="product-price" data-price="16.99">$16.99</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 4L6 14V22C6 33 13 42.5 24 44C35 42.5 42 33 42 22V14L24 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features_antislip_title">anti-slip</h3>
+            <p class="feature-description" data-i18n="features_antislip_desc">Maximum grip technology keeps you stable in every movement</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 12V24L32 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features_comfort_title">premium comfort</h3>
+            <p class="feature-description" data-i18n="features_comfort_desc">Soft, breathable fabric engineered for all-day wear</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L18 34L40 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features_quality_title">lasting quality</h3>
+            <p class="feature-description" data-i18n="features_quality_desc">Durable construction built to withstand intense use</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Showcase -->
+    <section class="section" id="men">
+      <div class="container">
+        <div class="collection-showcase">
+          <div class="collection-image">
+            <img src="assets/showcase-white.jpg" alt="Men's Collection">
+          </div>
+          <div class="collection-content">
+            <h2 data-i18n="collection_men_title">Men's Collection</h2>
+            <p data-i18n="collection_men_desc">Built for athletes and everyday warriors. Classic designs with professional-grade grip technology for maximum performance in any activity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lavender" style="background-color: var(--color-gray-bg);">
+      <div class="container">
+        <div class="collection-showcase">
+          <div class="collection-content">
+            <h2 data-i18n="collection_lavender_title">Lavender Dreams</h2>
+            <p data-i18n="collection_lavender_desc">Soft, elegant, and sophisticated. Our lavender collection brings a touch of calm luxury to your athletic wear with premium comfort and grip.</p>
+          </div>
+          <div class="collection-image">
+            <img src="assets/showcase-lavender.png" alt="Lavender Collection">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="women">
+      <div class="container">
+        <div class="collection-showcase">
+          <div class="collection-image">
+            <img src="assets/showcase-pink.jpg" alt="Women's Collection">
+          </div>
+          <div class="collection-content">
+            <h2 data-i18n="collection_women_title">Women's Collection</h2>
+            <p data-i18n="collection_women_desc">Designed specifically for women who demand both style and performance. Our women's collection features vibrant colors and patterns while maintaining superior grip technology.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brown" style="background-color: var(--color-gray-bg);">
+      <div class="container">
+        <div class="collection-showcase">
+          <div class="collection-content">
+            <h2 data-i18n="collection_brown_title">Earthy Elegance</h2>
+            <p data-i18n="collection_brown_desc">Warm tones meet premium performance. Our brown collection combines natural aesthetics with cutting-edge grip technology.</p>
+          </div>
+          <div class="collection-image">
+            <img src="assets/showcase-brown.png" alt="Brown Collection">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="section reviews-section">
+      <div class="container">
+        <div class="text-center mb-lg">
+          <h2 data-i18n="reviews_title">What Our Customers Say</h2>
+          <p style="color: var(--color-gray-dark); max-width: 600px; margin: 0 auto;" data-i18n="reviews_subtitle">Real feedback from our gripped community</p>
+        </div>
+
+        <div class="reviews-container">
+          <div class="reviews-track">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_1_text">Świetne skarpety! Wreszcie nie ślizgam się podczas treningu. Idealnie trzymają się stopy.</p>
+              <div class="review-author">
+                <div class="author-avatar">KN</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_1_name">Kasia N.</p>
+                  <p class="author-title" data-i18n="review_1_title">Instruktorka Pilates</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_2_text">Cudowne! Noszę je codziennie, są wygodne i materiał jest naprawdę wysokiej jakości. Polecam każdemu!</p>
+              <div class="review-author">
+                <div class="author-avatar">MG</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_2_name">Marta G.</p>
+                  <p class="author-title" data-i18n="review_2_title">Miłośniczka jogi</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_3_text">Najlepsze skarpety antypoślizgowe jakie miałam. Stosunek jakości do ceny jest rewelacyjny. Nie mogę się doczekać, żeby kupić więcej kolorów!</p>
+              <div class="review-author">
+                <div class="author-avatar">JN</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_3_name">Julia Nowak</p>
+                  <p class="author-title" data-i18n="review_3_title">Trenerka personalna</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_4_text">Rewelacja! Moje stopy wreszcie nie się nie pocą, a przyczepność jest niesamowita.</p>
+              <div class="review-author">
+                <div class="author-avatar">OW</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_4_name">Ola W.</p>
+                  <p class="author-title" data-i18n="review_4_title">Tancerka</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 5 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_5_text">Zakochałam się! Materiał jest miękki, a dodatkowo wyglądają bardzo stylowo. Każda z moich koleżanek chce takie same!</p>
+              <div class="review-author">
+                <div class="author-avatar">DK</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_5_name">Daria K.</p>
+                  <p class="author-title" data-i18n="review_5_title">Studentka</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 6 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_6_text">Super jakość, wygodne i dobrze się trzymają na nodze. Polecam!</p>
+              <div class="review-author">
+                <div class="author-avatar">MW</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_6_name">Magda Wójcik</p>
+                  <p class="author-title" data-i18n="review_6_title">Biegaczka</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 7 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_7_text">Te skarpety to game changer! Po miesiącu codziennego użytkowania wyglądają jak nowe. Jestem zachwycona trwałością i komfortem.</p>
+              <div class="review-author">
+                <div class="author-avatar">AK</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_7_name">Ania Kowalska</p>
+                  <p class="author-title" data-i18n="review_7_title">Instruktorka fitness</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 8 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_8_text">Fantastyczne! Mam wrażliwe stopy i te skarpetki są dla mnie idealne.</p>
+              <div class="review-author">
+                <div class="author-avatar">ZB</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_8_name">Zuzanna B.</p>
+                  <p class="author-title" data-i18n="review_8_title">Miłośniczka sportu</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 9 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_9_text">Odkryłam je przypadkiem i teraz są moim must-have. Nie wyobrażam sobie treningu bez nich. Przyczepność jest fenomenalna, a design minimalistyczny i elegancki.</p>
+              <div class="review-author">
+                <div class="author-avatar">PZ</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_9_name">Paulina Zielińska</p>
+                  <p class="author-title" data-i18n="review_9_title">Architektka</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 10 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_10_text">Piękne kolory, super jakość. Jestem bardzo zadowolona.</p>
+              <div class="review-author">
+                <div class="author-avatar">KR</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_10_name">Klaudia R.</p>
+                  <p class="author-title" data-i18n="review_10_title">Graficzka</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 11 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_11_text">Miałam okazję przetestować wiele skarpetek antypoślizgowych, ale te są absolutnie najlepsze. Jakość wykonania na najwyższym poziomie, a przyczepność działa naprawdę świetnie. Polecam gorąco!</p>
+              <div class="review-author">
+                <div class="author-avatar">AM</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_11_name">Agata Mazur</p>
+                  <p class="author-title" data-i18n="review_11_title">Fizjoterapeutka</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 12 -->
+            <div class="review-card">
+              <div class="review-stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+              </div>
+              <p class="review-text" data-i18n="review_12_text">Śliczne! Kupiłam je na prezent dla przyjaciółki i ona też jest zachwycona.</p>
+              <div class="review-author">
+                <div class="author-avatar">NK</div>
+                <div class="author-info">
+                  <p class="author-name" data-i18n="review_12_name">Natalia K.</p>
+                  <p class="author-title" data-i18n="review_12_title">Blogerka lifestyle</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4 data-i18n="footer_about_title">About</h4>
+          <p data-i18n="footer_about_text">gripped. delivers premium grip socks designed for comfort, performance, and lasting quality. Stay grounded in every step.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_shop_title">Shop</h4>
+          <ul>
+            <li><a href="#women" data-i18n="footer_shop_women">Women's Collection</a></li>
+            <li><a href="#men" data-i18n="footer_shop_men">Men's Collection</a></li>
+            <li><a href="#all" data-i18n="footer_shop_all">All Products</a></li>
+            <li><a href="#gift" data-i18n="footer_shop_gift">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_support_title">Support</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="footer_support_contact">Contact Us</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_shipping">Shipping Info</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_returns">Returns</a></li>
+            <li><a href="faq.html" data-i18n="footer_support_faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_newsletter_title">Newsletter</h4>
+          <p data-i18n="footer_newsletter_text">Stay updated with new releases and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" data-i18n-placeholder="footer_newsletter_placeholder" placeholder="enter your email" required>
+            <button type="submit" data-i18n="footer_newsletter_button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p data-i18n="footer_copyright">&copy; 2026 gripped.</p>
+          <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+            <a href="#terms" style="color: var(--color-gray-dark); text-decoration: none;">Terms of Service</a>
+            <a href="#privacy" style="color: var(--color-gray-dark); text-decoration: none;">Privacy Policy</a>
+            <a href="#cookies" style="color: var(--color-gray-dark); text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/translations.js"></script>
+  <script src="assets/theme.js"></script>
+  <script src="assets/cart.js"></script>
+  <script>
+    // Quick add functionality for homepage products
+    document.addEventListener('DOMContentLoaded', function() {
+      const quickAddButtons = document.querySelectorAll('.quick-add');
+
+      quickAddButtons.forEach((button, index) => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation(); // Prevent link navigation
+
+          const productCard = this.closest('.product-card');
+          const productName = productCard.querySelector('.product-name').textContent;
+          const productPrice = parseFloat(productCard.querySelector('.product-price').getAttribute('data-price'));
+          const productImage = productCard.querySelector('img').src;
+
+          // Map index to product ID and default color
+          const products = [
+            { id: 'classic-white-grip-socks', color: 'White' },
+            { id: 'soft-lavender-grip-socks', color: 'Lavender' },
+            { id: 'petal-pink-grip-socks', color: 'Pink' },
+            { id: 'warm-brown-grip-socks', color: 'Brown' }
+          ];
+
+          const product = {
+            id: products[index].id,
+            name: productName,
+            price: productPrice,
+            quantity: 1,
+            size: 'M',
+            color: products[index].color,
+            image: productImage
+          };
+
+          if (typeof addToCart === 'function') {
+            addToCart(product);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

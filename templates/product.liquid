@@ -1,0 +1,252 @@
+<!-- Hero Section -->
+<section class="hero">
+  <img src="{{ 'hero-image.png' | asset_url }}" alt="Stay grounded" class="hero-image">
+</section>
+
+<!-- Product Section -->
+<section class="section" id="product-section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin-left: 15%;">
+
+      <!-- Product Image -->
+      <div class="product-image-zoom-container">
+        <div class="main-product-image-zoom">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ product.title }}" id="mainImage" style="filter: grayscale(0%) contrast(0.90) brightness(1.20);">
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-details" style="max-width: 400px; padding-left: 48px;">
+        <h1 style="font-family: var(--font-secondary); font-size: 36px; margin-bottom: 16px;" data-i18n="product_{{ product.handle | replace: '-grip-socks', '' | replace: '-', '_' }}">{{ product.title }}</h1>
+
+        <p class="product-price" style="font-size: 20px; margin-bottom: 32px;" data-price="{{ product.price | money_without_currency }}">{{ product.price | money }}</p>
+
+        <!-- Shopify Product Form -->
+        {% form 'product', product %}
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+
+          <!-- Add to Cart -->
+          <button type="submit" class="btn glow-btn glow-btn-outline" data-i18n="add_to_cart">Add to Cart</button>
+        {% endform %}
+
+        <button class="btn glow-btn glow-btn-solid" onclick="window.location.href='/checkout'" data-i18n="buy_now">Buy It Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Auto-scroll to product section on page load
+    const productSection = document.getElementById('product-section');
+    if (productSection) {
+      productSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+
+    // Shopify form submission handling
+    const productForm = document.querySelector('form[action*="/cart/add"]');
+    if (productForm) {
+      productForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(productForm);
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Update cart count
+          fetch('/cart.js')
+            .then(response => response.json())
+            .then(cart => {
+              const cartCount = document.querySelector('.cart-count');
+              if (cartCount) {
+                cartCount.textContent = cart.item_count;
+              }
+              // Open cart drawer
+              if (typeof openCartDrawer === 'function') {
+                openCartDrawer();
+              }
+            });
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+        });
+      });
+    }
+
+    // Zoom effect on hover
+    const zoomContainer = document.querySelector('.main-product-image-zoom');
+    const img = document.getElementById('mainImage');
+
+    if (zoomContainer && img) {
+      zoomContainer.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        img.style.transformOrigin = `${x}% ${y}%`;
+        img.style.transform = 'scale(2)';
+      });
+
+      zoomContainer.addEventListener('mouseleave', function() {
+        img.style.transform = 'scale(1)';
+      });
+    }
+  });
+</script>
+
+<style>
+  .product-image-zoom-container {
+    position: sticky;
+    top: 120px;
+  }
+
+  .main-product-image-zoom {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    aspect-ratio: 3/5;
+    overflow: hidden;
+    border-radius: 0;
+    background-color: var(--color-gray-bg);
+    cursor: zoom-in;
+  }
+
+  .main-product-image-zoom::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('{{ "grain.png" | asset_url }}');
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: overlay;
+    opacity: 0.05;
+  }
+
+  .main-product-image-zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .container > div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+
+    .product-image-zoom-container {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  /* Glow Button Styles */
+  .glow-btn {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 56px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .glow-btn-outline {
+    background-color: white;
+    border: 1px solid #333;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  .glow-btn-solid {
+    background-color: #333;
+    border: 1px solid #333;
+    color: white;
+  }
+
+  /* Glare effect overlay for solid button */
+  .glow-btn-solid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  /* Glare effect overlay for outline button - darker glare */
+  .glow-btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.08),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  .glow-btn:hover::before {
+    left: 100%;
+  }
+
+  /* Glow effect */
+  .glow-btn-outline:hover {
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.5),
+                0 0 40px rgba(51, 51, 51, 0.3),
+                0 0 60px rgba(51, 51, 51, 0.2);
+    border-color: #111;
+  }
+
+  .glow-btn-solid:hover {
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.5),
+                0 0 40px rgba(51, 51, 51, 0.3),
+                0 0 60px rgba(51, 51, 51, 0.2);
+    background-color: #222;
+  }
+
+  /* Press animation */
+  .glow-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .glow-btn-outline:active {
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.6);
+  }
+
+  .glow-btn-solid:active {
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.6);
+  }
+</style>

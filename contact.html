@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - gripped.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css?v=thin100">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html" class="logo">gripped.</a>
+
+        <div class="header-icons">
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button class="lang-toggle" id="langToggle">
+              <span class="flag-icon" data-flag="us"></span>
+              <span class="arrow-icon">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option" data-lang="en" data-currency="USD" data-symbol="$" data-flag="us">
+                <span class="flag-icon" data-flag="us"></span>
+                <span class="country-name">United States</span>
+                <span class="currency-code">(USD $)</span>
+              </div>
+              <div class="lang-option" data-lang="pl" data-currency="PLN" data-symbol="PLN" data-flag="pl">
+                <span class="flag-icon" data-flag="pl"></span>
+                <span class="country-name">Poland</span>
+                <span class="currency-code">(PLN)</span>
+              </div>
+              <div class="lang-option" data-lang="de" data-currency="EUR" data-symbol="€" data-flag="de">
+                <span class="flag-icon" data-flag="de"></span>
+                <span class="country-name">Germany</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="fr" data-currency="EUR" data-symbol="€" data-flag="fr">
+                <span class="flag-icon" data-flag="fr"></span>
+                <span class="country-name">France</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="es" data-currency="EUR" data-symbol="€" data-flag="es">
+                <span class="flag-icon" data-flag="es"></span>
+                <span class="country-name">Spain</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="it" data-currency="EUR" data-symbol="€" data-flag="it">
+                <span class="flag-icon" data-flag="it"></span>
+                <span class="country-name">Italy</span>
+                <span class="currency-code">(EUR €)</span>
+              </div>
+              <div class="lang-option" data-lang="gb" data-currency="GBP" data-symbol="£" data-flag="gb">
+                <span class="flag-icon" data-flag="gb"></span>
+                <span class="country-name">United Kingdom</span>
+                <span class="currency-code">(GBP £)</span>
+              </div>
+              <div class="lang-option" data-lang="au" data-currency="AUD" data-symbol="$" data-flag="au">
+                <span class="flag-icon" data-flag="au"></span>
+                <span class="country-name">Australia</span>
+                <span class="currency-code">(AUD $)</span>
+              </div>
+            </div>
+          </div>
+          <button class="icon-btn search-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="#account" class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 18C3 14.134 6.134 11 10 11C13.866 11 17 14.134 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#cart" class="icon-btn cart-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 3H4.5L6.5 13H16.5L18.5 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="17" r="1" fill="currentColor"/>
+              <circle cx="15" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 120px;">
+      <div class="container">
+        <div class="text-center mb-lg">
+          <h1 style="font-family: var(--font-secondary); font-size: 48px; margin-bottom: 16px;">Get in Touch</h1>
+          <p style="color: var(--color-gray-dark); max-width: 700px; margin: 0 auto; font-size: var(--text-lg);">
+            Have a question or need assistance? We're here to help. Fill out the form below and we'll get back to you as soon as possible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+
+          <!-- Contact Form -->
+          <div>
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <label for="name" style="display: block; font-weight: 500; margin-bottom: 8px; font-size: 14px;">Name *</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--color-gray-light); border-radius: var(--radius-sm); font-size: 14px; transition: border-color var(--transition-fast);">
+              </div>
+
+              <div>
+                <label for="email" style="display: block; font-weight: 500; margin-bottom: 8px; font-size: 14px;">Email *</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--color-gray-light); border-radius: var(--radius-sm); font-size: 14px; transition: border-color var(--transition-fast);">
+              </div>
+
+              <div>
+                <label for="subject" style="display: block; font-weight: 500; margin-bottom: 8px; font-size: 14px;">Subject *</label>
+                <input type="text" id="subject" name="subject" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--color-gray-light); border-radius: var(--radius-sm); font-size: 14px; transition: border-color var(--transition-fast);">
+              </div>
+
+              <div>
+                <label for="message" style="display: block; font-weight: 500; margin-bottom: 8px; font-size: 14px;">Message *</label>
+                <textarea id="message" name="message" required rows="6" style="width: 100%; padding: 12px 16px; border: 1px solid var(--color-gray-light); border-radius: var(--radius-sm); font-size: 14px; resize: vertical; font-family: inherit; transition: border-color var(--transition-fast);"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div style="background-color: var(--color-gray-bg); padding: 48px; border-radius: var(--radius-md);">
+            <h2 style="margin-bottom: 32px;">Contact Information</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+              <div>
+                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Email</h3>
+                <p style="color: var(--color-gray-dark);">support@gripped.com</p>
+              </div>
+
+              <div>
+                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Response Time</h3>
+                <p style="color: var(--color-gray-dark);">We typically respond within 24 hours during business days.</p>
+              </div>
+
+              <div>
+                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Follow Us</h3>
+                <div style="display: flex; gap: 16px; margin-top: 16px;">
+                  <a href="#instagram" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-white); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-fast);" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/>
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+                      <circle cx="17" cy="7" r="1" fill="currentColor"/>
+                    </svg>
+                  </a>
+                  <a href="#facebook" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-white); display: flex; align-items: center; justify-content: center; transition: background-color var(--transition-fast);" aria-label="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Quick Links</h3>
+                <ul style="display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0; margin: 0;">
+                  <li><a href="faq.html" style="color: var(--color-gray-dark); text-decoration: none; transition: color var(--transition-fast);">FAQ</a></li>
+                  <li><a href="shipping.html" style="color: var(--color-gray-dark); text-decoration: none; transition: color var(--transition-fast);">Shipping & Returns</a></li>
+                  <li><a href="about.html" style="color: var(--color-gray-dark); text-decoration: none; transition: color var(--transition-fast);">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4 data-i18n="footer_about_title">About</h4>
+          <p data-i18n="footer_about_text">gripped. delivers premium grip socks designed for comfort, performance, and lasting quality. Stay grounded in every step.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_shop_title">Shop</h4>
+          <ul>
+            <li><a href="index.html#women" data-i18n="footer_shop_women">Women's Collection</a></li>
+            <li><a href="index.html#men" data-i18n="footer_shop_men">Men's Collection</a></li>
+            <li><a href="index.html" data-i18n="footer_shop_all">All Products</a></li>
+            <li><a href="#gift" data-i18n="footer_shop_gift">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_support_title">Support</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="footer_support_contact">Contact Us</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_shipping">Shipping Info</a></li>
+            <li><a href="shipping.html" data-i18n="footer_support_returns">Returns</a></li>
+            <li><a href="faq.html" data-i18n="footer_support_faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-i18n="footer_newsletter_title">Newsletter</h4>
+          <p data-i18n="footer_newsletter_text">Stay updated with new releases and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" data-i18n-placeholder="footer_newsletter_placeholder" placeholder="enter your email" required>
+            <button type="submit" data-i18n="footer_newsletter_button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p data-i18n="footer_copyright">&copy; 2026 gripped.</p>
+          <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+            <a href="#terms" style="color: var(--color-gray-dark); text-decoration: none;">Terms of Service</a>
+            <a href="#privacy" style="color: var(--color-gray-dark); text-decoration: none;">Privacy Policy</a>
+            <a href="#cookies" style="color: var(--color-gray-dark); text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/translations.js"></script>
+  <script src="assets/theme.js"></script>
+  <script src="assets/cart.js"></script>
+
+  <script>
+    // Contact form submission handler
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Show success message (UI only - no backend)
+      alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+
+      // Reset form
+      this.reset();
+    });
+
+    // Add focus styles to inputs
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.style.borderColor = 'var(--color-black)';
+        this.style.outline = 'none';
+      });
+      input.addEventListener('blur', function() {
+        this.style.borderColor = 'var(--color-gray-light)';
+      });
+    });
+  </script>
+
+  <style>
+    @media (max-width: 768px) {
+      .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+    }
+  </style>
+</body>
+</html>
