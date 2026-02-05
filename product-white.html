@@ -11,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/style.css?v=thin100">
+  <link rel="stylesheet" href="assets/style.css?v=cart101">
+  <link rel="stylesheet" href="assets/cart-modern.css">
 </head>
 <body>
 
@@ -71,34 +72,14 @@
               </div>
             </div>
           </div>
-          <button class="icon-btn search-toggle">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </button>
-          <a href="#account" class="icon-btn">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M3 18C3 14.134 6.134 11 10 11C13.866 11 17 14.134 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </a>
           <a href="#cart" class="icon-btn cart-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M3 3H4.5L6.5 13H16.5L18.5 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="8" cy="17" r="1" fill="currentColor"/>
               <circle cx="15" cy="17" r="1" fill="currentColor"/>
             </svg>
-            <span class="cart-count">0</span>
           </a>
         </div>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </div>
   </header>
@@ -111,26 +92,28 @@
     </section>
 
     <!-- Product Section -->
-    <section class="section">
+    <section class="section" id="product-section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin-left: 15%;">
+        <div class="product-layout">
 
           <!-- Product Image -->
           <div class="product-image-zoom-container">
             <div class="main-product-image-zoom">
-              <img src="assets/white-socks.png" alt="Classic White Grip Socks" id="mainImage" style="filter: grayscale(0%) contrast(0.90) brightness(1.20);">
+              <img src="assets/white-socks.png" alt="Classic White Grip Socks" id="mainImage" style="filter: grayscale(0%) contrast(1.35) brightness(1.0) saturate(1.15);">
             </div>
           </div>
 
           <!-- Product Details -->
-          <div class="product-details" style="max-width: 400px; padding-left: 48px;">
-            <h1 style="font-family: var(--font-secondary); font-size: 36px; margin-bottom: 16px;">Classic White</h1>
+          <div class="product-details">
+            <h1 class="product-title">Classic White</h1>
 
-            <p class="product-price" style="font-size: 20px; margin-bottom: 32px;" data-price="16.99">$16.99</p>
+            <p class="product-price" data-price="15.9">$15.90</p>
 
             <!-- Add to Cart -->
-            <button class="btn glow-btn glow-btn-outline">Add to Cart</button>
-            <button class="btn glow-btn glow-btn-solid">Buy It Now</button>
+            <div class="product-buttons">
+              <button class="btn glow-btn glow-btn-outline">Add to Cart</button>
+              <button class="btn glow-btn glow-btn-solid">Buy It Now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -189,11 +172,17 @@
     </div>
   </footer>
 
-  <script src="assets/translations.js"></script>
+  <script src="assets/translations.js?v=2"></script>
   <script src="assets/theme.js"></script>
-  <script src="assets/cart.js"></script>
+  <script src="assets/cart.js?v=3"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Auto-scroll to product section instantly
+      const productSection = document.getElementById('product-section');
+      if (productSection) {
+        window.scrollTo({ top: productSection.offsetTop - 80, behavior: 'auto' });
+      }
+
       // Add to cart functionality
       const addToCartBtn = document.querySelector('.glow-btn-outline');
       if (addToCartBtn) {
@@ -203,7 +192,7 @@
           const product = {
             id: 'classic-white-grip-socks',
             name: 'Classic White',
-            price: 16.99,
+            price: 15.9,
             quantity: 1,
             size: 'One Size',
             color: 'White',
@@ -217,26 +206,83 @@
         });
       }
 
-      // Zoom effect on hover
+      // Zoom effect on hover (desktop) and touch-hold (mobile)
       const zoomContainer = document.querySelector('.main-product-image-zoom');
       const img = document.getElementById('mainImage');
 
-      zoomContainer.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
+      if (zoomContainer && img) {
+        // Mobile: instant zoom on touch
+        zoomContainer.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          const touch = e.touches[0];
+          const rect = this.getBoundingClientRect();
+          const x = ((touch.clientX - rect.left) / rect.width) * 100;
+          const y = ((touch.clientY - rect.top) / rect.height) * 100;
+          img.style.transformOrigin = x + '% ' + y + '%';
+          img.style.transform = 'scale(2)';
+          zoomContainer.classList.add('zoomed');
+        });
 
-        img.style.transformOrigin = `${x}% ${y}%`;
-        img.style.transform = 'scale(2)';
-      });
+        zoomContainer.addEventListener('touchmove', function(e) {
+          e.preventDefault();
+          const touch = e.touches[0];
+          const rect = this.getBoundingClientRect();
+          const x = ((touch.clientX - rect.left) / rect.width) * 100;
+          const y = ((touch.clientY - rect.top) / rect.height) * 100;
+          img.style.transformOrigin = x + '% ' + y + '%';
+        });
 
-      zoomContainer.addEventListener('mouseleave', function() {
-        img.style.transform = 'scale(1)';
-      });
+        zoomContainer.addEventListener('touchend', function() {
+          img.style.transform = 'scale(1)';
+          zoomContainer.classList.remove('zoomed');
+        });
+
+        zoomContainer.addEventListener('touchcancel', function() {
+          img.style.transform = 'scale(1)';
+          zoomContainer.classList.remove('zoomed');
+        });
+
+        // Desktop: hover to zoom
+        zoomContainer.addEventListener('mousemove', function(e) {
+          const rect = this.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          img.style.transformOrigin = x + '% ' + y + '%';
+          img.style.transform = 'scale(2)';
+        });
+
+        zoomContainer.addEventListener('mouseleave', function() {
+          img.style.transform = 'scale(1)';
+        });
+      }
     });
   </script>
 
   <style>
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-left: 15%;
+    }
+
+    .product-details {
+      max-width: 400px;
+      padding-left: 48px;
+    }
+
+    .product-title {
+      font-family: var(--font-secondary);
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .product-details .product-price {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+
     .product-image-zoom-container {
       position: sticky;
       top: 120px;
@@ -279,14 +325,57 @@
     }
 
     @media (max-width: 768px) {
-      .container > div[style*="grid-template-columns: 1fr 1fr"] {
+      body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      .product-layout {
         grid-template-columns: 1fr !important;
-        gap: 32px !important;
+        gap: 24px !important;
+        margin-left: 0 !important;
       }
 
       .product-image-zoom-container {
         position: relative;
         top: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .main-product-image-zoom {
+        max-width: 75%;
+        cursor: pointer;
+      }
+
+      .main-product-image-zoom.zoomed img {
+        transform: scale(2);
+      }
+
+      .product-details {
+        max-width: 100%;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .product-title {
+        font-size: 28px;
+      }
+
+      .product-buttons {
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .glow-btn {
+        max-width: 100%;
       }
     }
 
@@ -304,6 +393,9 @@
       cursor: pointer;
       overflow: hidden;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .glow-btn-outline {

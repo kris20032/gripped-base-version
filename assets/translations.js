@@ -569,7 +569,7 @@ function t(key, lang = null) {
   return translations[currentLang][key] || key;
 }
 
-// Fixed prices per currency
+// Fixed single-item prices per currency
 const fixedPrices = {
   USD: 15.9,
   PLN: 59,
@@ -577,6 +577,9 @@ const fixedPrices = {
   GBP: 14.9,
   AUD: 15.9
 };
+
+// Base USD price for ratio calculations (must match data-price in HTML)
+const BASE_USD_PRICE = 15.9;
 
 // Currency symbols
 const currencySymbols = {
@@ -616,10 +619,14 @@ function setLanguage(lang, currency = null, symbol = null, flag = null) {
   document.dispatchEvent(new Event('currencyChanged'));
 }
 
-// Get fixed price for target currency
+// Convert price from USD to target currency
 function convertPrice(basePrice, targetCurrency) {
-  // Use fixed prices instead of conversion (basePrice is ignored, we use fixed prices)
-  const price = fixedPrices[targetCurrency] || fixedPrices['USD'];
+  // Calculate quantity multiplier based on how many items (basePrice / single item price)
+  const multiplier = basePrice / BASE_USD_PRICE;
+
+  // Get the fixed price for target currency and multiply by quantity
+  const fixedPrice = fixedPrices[targetCurrency] || fixedPrices['USD'];
+  const price = fixedPrice * multiplier;
 
   // Format based on currency
   if (targetCurrency === 'PLN') {

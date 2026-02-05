@@ -183,12 +183,107 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Helper function to add touch events for mobile video playback
+  function addTouchVideoEvents(element, video) {
+    let touchTimer = null;
+    let touchStarted = false;
+    let videoPlaying = false;
+    let startX = 0;
+    let startY = 0;
+    let swipeDetected = false;
+    let moveThreshold = 20; // pixels - increased for better swipe vs hold detection
+
+    function stopVideo() {
+      console.log('Stopping video');
+      touchStarted = false;
+      videoPlaying = false;
+      swipeDetected = false;
+      if (touchTimer) {
+        clearTimeout(touchTimer);
+        touchTimer = null;
+      }
+      video.style.opacity = '0';
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    element.addEventListener('touchstart', function(e) {
+      console.log('Touch start');
+      touchStarted = true;
+      swipeDetected = false;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+
+      // Set timer for 0.25 seconds
+      touchTimer = setTimeout(function() {
+        // Only play if still touching and no swipe detected
+        if (touchStarted && !swipeDetected) {
+          console.log('Playing video after 250ms - hold detected');
+          videoPlaying = true;
+          video.style.opacity = '1';
+          video.play().catch(function(error) {
+            console.error('Video play error:', error);
+          });
+        } else {
+          console.log('Timer expired but swipe was detected, not playing video');
+        }
+      }, 250); // 0.25 seconds
+    }, { passive: true });
+
+    element.addEventListener('touchmove', function(e) {
+      const currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const deltaX = Math.abs(currentX - startX);
+
+      // Only detect HORIZONTAL swipe (left/right carousel swipe)
+      // Allow vertical scrolling (up/down) - video will still play while scrolling vertically
+      if (deltaX > moveThreshold) {
+        console.log('Horizontal swipe detected - stopping video, deltaX:', deltaX);
+        swipeDetected = true;
+
+        // Stop video instantly on horizontal swipe
+        if (videoPlaying) {
+          stopVideo();
+        } else {
+          // Cancel the timer if video hasn't started yet
+          if (touchTimer) {
+            clearTimeout(touchTimer);
+            touchTimer = null;
+          }
+        }
+      }
+      // Vertical movement (deltaY) is completely ignored - timer continues, video can play
+    }, { passive: true });
+
+    element.addEventListener('touchend', function(e) {
+      console.log('Touch end - stopping video immediately');
+
+      // Always stop video when touch ends
+      stopVideo();
+    });
+
+    element.addEventListener('touchcancel', function() {
+      console.log('Touch cancel');
+      stopVideo();
+    });
+
+    // Stop video when carousel scrolls
+    const productGrid = document.querySelector('#productCarousel');
+    if (productGrid) {
+      productGrid.addEventListener('scroll', function() {
+        if (videoPlaying) {
+          stopVideo();
+        }
+      });
+    }
+  }
+
   // Video hover effect for Classic White product
   const classicWhiteProduct = document.querySelector('.product-card:first-child .product-image');
   if (classicWhiteProduct) {
     // Create video element
     const video = document.createElement('video');
-    video.src = 'https://cdn.shopify.com/s/files/1/1012/5639/7145/t/2/assets/white-socks-video.mp4?v=1769274273';
+    video.src = 'assets/white-socks-video.mp4';
     video.style.position = 'absolute';
     video.style.top = '0';
     video.style.left = '0';
@@ -204,6 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     classicWhiteProduct.appendChild(video);
 
+    // Desktop hover events
     classicWhiteProduct.addEventListener('mouseenter', function() {
       video.style.opacity = '1';
       video.play();
@@ -214,47 +310,17 @@ document.addEventListener('DOMContentLoaded', function() {
       video.pause();
       video.currentTime = 0;
     });
+
+    // Mobile touch events
+    addTouchVideoEvents(classicWhiteProduct, video);
   }
 
-  // Video hover effect for Soft Lavender product
-  const lavenderProduct = document.querySelector('.product-card:nth-child(2) .product-image');
-  if (lavenderProduct) {
-    // Create video element
-    const video = document.createElement('video');
-    video.src = 'https://cdn.shopify.com/s/files/1/1012/5639/7145/t/2/assets/pink-socks-video.mov?v=1769274273';
-    video.style.position = 'absolute';
-    video.style.top = '0';
-    video.style.left = '0';
-    video.style.width = '100%';
-    video.style.height = '100%';
-    video.style.objectFit = 'cover';
-    video.style.opacity = '0';
-    video.style.transition = 'opacity 0.3s ease';
-    video.style.zIndex = '1';
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-
-    lavenderProduct.appendChild(video);
-
-    lavenderProduct.addEventListener('mouseenter', function() {
-      video.style.opacity = '1';
-      video.play();
-    });
-
-    lavenderProduct.addEventListener('mouseleave', function() {
-      video.style.opacity = '0';
-      video.pause();
-      video.currentTime = 0;
-    });
-  }
-
-  // Video hover effect for Petal Pink product
-  const pinkProduct = document.querySelector('.product-card:nth-child(3) .product-image');
+  // Video hover effect for Petal Pink product (2nd in grid)
+  const pinkProduct = document.querySelector('.product-card:nth-child(2) .product-image');
   if (pinkProduct) {
     // Create video element
     const video = document.createElement('video');
-    video.src = 'https://cdn.shopify.com/s/files/1/1012/5639/7145/t/2/assets/lavender-socks-video.mov?v=1769274271';
+    video.src = 'assets/pink-socks-video.mp4';
     video.style.position = 'absolute';
     video.style.top = '0';
     video.style.left = '0';
@@ -270,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     pinkProduct.appendChild(video);
 
+    // Desktop hover events
     pinkProduct.addEventListener('mouseenter', function() {
       video.style.opacity = '1';
       video.play();
@@ -280,14 +347,54 @@ document.addEventListener('DOMContentLoaded', function() {
       video.pause();
       video.currentTime = 0;
     });
+
+    // Mobile touch events
+    addTouchVideoEvents(pinkProduct, video);
   }
 
-  // Video hover effect for Warm Brown product
+  // Video hover effect for Soft Lavender product (3rd in grid)
+  const lavenderProduct = document.querySelector('.product-card:nth-child(3) .product-image');
+  if (lavenderProduct) {
+    // Create video element
+    const video = document.createElement('video');
+    video.src = 'assets/lavender-socks-video.mp4';
+    video.style.position = 'absolute';
+    video.style.top = '0';
+    video.style.left = '0';
+    video.style.width = '100%';
+    video.style.height = '100%';
+    video.style.objectFit = 'cover';
+    video.style.opacity = '0';
+    video.style.transition = 'opacity 0.3s ease';
+    video.style.zIndex = '1';
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    lavenderProduct.appendChild(video);
+
+    // Desktop hover events
+    lavenderProduct.addEventListener('mouseenter', function() {
+      video.style.opacity = '1';
+      video.play();
+    });
+
+    lavenderProduct.addEventListener('mouseleave', function() {
+      video.style.opacity = '0';
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    // Mobile touch events
+    addTouchVideoEvents(lavenderProduct, video);
+  }
+
+  // Video hover effect for Warm Brown product (4th in grid)
   const brownProduct = document.querySelector('.product-card:nth-child(4) .product-image');
   if (brownProduct) {
     // Create video element
     const video = document.createElement('video');
-    video.src = 'https://cdn.shopify.com/s/files/1/1012/5639/7145/t/2/assets/brown-socks-video.mov?v=1769274270';
+    video.src = 'assets/brown-socks-video.mov';
     video.style.position = 'absolute';
     video.style.top = '0';
     video.style.left = '0';
@@ -303,6 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     brownProduct.appendChild(video);
 
+    // Desktop hover events
     brownProduct.addEventListener('mouseenter', function() {
       video.style.opacity = '1';
       video.play();
@@ -313,6 +421,9 @@ document.addEventListener('DOMContentLoaded', function() {
       video.pause();
       video.currentTime = 0;
     });
+
+    // Mobile touch events
+    addTouchVideoEvents(brownProduct, video);
   }
 
   // Scroll Animations
@@ -482,3 +593,69 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// ========================================
+// MOBILE PRODUCT CAROUSEL - MAGNETIC SCROLL WITH DOTS
+// ========================================
+
+// Only initialize on mobile devices
+function initMobileProductCarousel() {
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile) return;
+
+  const productGrid = document.querySelector('#productCarousel');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+  const carouselItems = document.querySelectorAll('[data-carousel-item]');
+
+  if (!productGrid || dots.length === 0 || carouselItems.length === 0) return;
+
+  // Intersection Observer to detect active card
+  const observerOptions = {
+    root: productGrid,
+    rootMargin: '0px',
+    threshold: 0.6 // Card must be 60% visible to be considered active
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Find index of the active card
+        const activeIndex = Array.from(carouselItems).indexOf(entry.target);
+
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Observe all carousel items
+  carouselItems.forEach((item) => {
+    observer.observe(item);
+  });
+
+  // Cleanup on resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      const nowMobile = window.innerWidth <= 768;
+      if (!nowMobile) {
+        // Clean up observer when switching to desktop
+        observer.disconnect();
+      }
+    }, 200);
+  });
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileProductCarousel);
+} else {
+  initMobileProductCarousel();
+}
